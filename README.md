@@ -1,5 +1,4 @@
 # SUMO-RL-MobiCharger
-Reinforcement Learning environment for Dispatching of Mobile Chargers with SUMO. Compatible with Gym and popular RL libraries such as stable-baselines3.
 
 <!-- start intro -->
 
@@ -65,3 +64,21 @@ python train.py --algo ppo --env SumoEnv-v0 --num-threads 1 --progress --conf-fi
 
 
 <!-- end intro -->
+
+## Citing
+
+<!-- start citation -->
+
+If you use this repository in your research, please cite:
+```bibtex
+@article{yan2022mobicharger,
+  title={MobiCharger: Optimal Scheduling for Cooperative EV-to-EV Dynamic Wireless Charging},
+  author={Yan, Li and Shen, Haiying and Kang, Liuwang and Zhao, Juanjuan and Zhang, Zhe and Xu, Chengzhong},
+  journal={IEEE Transactions on Mobile Computing},
+  volume={Early Access}, 
+  year={2022},
+  publisher={IEEE}
+}
+```
+
+<!-- end citation -->
