@@ -9,13 +9,13 @@ SUMO-RL-MobiCharger provides an OpenAI-gym-like environment for the implementati
 - Easy modification of state and reward functions for research focusing on vehicle routing or scheduling problems
 
 <p>
-    <img src="accessories/demo.gif" width="400"/>
+    <img src="accessories/demo.gif" align="center" width="400"/>
 </p>
 <p>
     <em>Blue vehicles are mobile chargers, yellow vehicles are electric vehicles, green highlight means charging between mobile chargers and EVs, and blue highlight means charging between mobile chargers and charging stations</em>
 </p>
 
-The main class is [SumoEnv](https://github.com/liyan2015/SUMO-RL-MobiCharger/blob/main/canalenv/envs/canalenv_gym.py). To train with RL Baselines3 Zoo, you need to register the environment as in their [doc](https://rl-baselines3-zoo.readthedocs.io/en/master/guide/custom_env.html) and add the following code to ```exp_manager.py```:
+The main class is [SumoEnv](canalenv/envs/canalenv_gym.py). To train with RL Baselines3 Zoo, you need to register the environment as in their [doc](https://rl-baselines3-zoo.readthedocs.io/en/master/guide/custom_env.html) and add the following code to ```exp_manager.py```:
 
 ```python
 # On most env, SubprocVecEnv does not help and is quite memory hungry
@@ -82,8 +82,8 @@ The default observation for the agent is a vector:
 - ```SOC_state``` indicates the amount of SOC on the road network pending to be refilled by mobile chargers
 - ```charger_state``` indicates current road segment, staying time, charging_others bit, charge_self bit, SOC, distance to target vehicle and neighbor_vehicle bit of each mobile charger
 - ```elig_act_state``` indicates the eligible actions that each mobile charger can take at current road segment
-- ```dir_state```indicates the best action of each mobile charger given its current road segment
-- ```charge_station_state```indicates the remaining SOCs that the mobile chargers will have if they go to the charging stations for a recharge
+- ```dir_state``` indicates the best action of each mobile charger given its current road segment
+- ```charge_station_state``` indicates the remaining SOCs that the mobile chargers will have if they go to the charging stations for a recharge
 
 <!-- end observation -->
 
