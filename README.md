@@ -115,24 +115,15 @@ Througout the road network, a mobile charger can only take maximally 6 actions: 
 
 <!-- start reward -->
 
-The default reward function is the change in cumulative vehicle delay:
-
-<p align="center">
-<img src="docs/_static/reward.png" align="center" width="25%"/>
-</p>
-
-That is, the reward is how much the total delay (sum of the waiting times of all approaching vehicles) changed in relation to the previous time-step.
-
-You can choose a different reward function (see the ones implemented in [TrafficSignal](https://github.com/LucasAlegre/sumo-rl/blob/master/sumo_rl/environment/traffic_signal.py)) with the parameter `reward_fn` in the [SumoEnvironment](https://github.com/LucasAlegre/sumo-rl/blob/master/sumo_rl/environment/env.py) constructor.
-
-It is also possible to implement your own reward function:
-
-```python
-def my_reward_fn(traffic_signal):
-    return traffic_signal.get_average_speed()
-
-env = SumoEnvironment(..., reward_fn=my_reward_fn)
-```
+The default reward function is defined as:
+    
+- ```+ 2``` if a mobile charger charges an EV with ```step_charged_SOC```
+- ```+ 2 * charger.step_charged_SOC + 0.2 * (1 - before_SOC)``` if a mobile charger charges itself with ```step_charged_SOC```
+- ```+ 8e-2``` if a mobile charger takes the best action
+- ```- 8e-2``` if a mobile charger takes an action different from the best one
+- ```- 8e-1``` if a mobile charger takes an ineligible action given its current road segment
+- ```- 300``` if a mobile charger exhausts its SOC
+- ```- 150``` if the agent succeeds in charging all the EVs and support the completion of their trips
 
 <!-- end reward -->
 
