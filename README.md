@@ -9,6 +9,8 @@ SUMO-RL-MobiCharger provides an OpenAI-gym-like environment for the implementati
 - Compatibility with OpenAI-gym and popular RL libraries such as [stable-baselines3](https://github.com/DLR-RM/stable-baselines3) and [RL Baselines3 Zoo](https://github.com/DLR-RM/rl-baselines3-zoo)
 - Easy modification of state and reward functions for research focusing on vehicle routing or scheduling problems
 
+<img src="https://github.com/liyan2015/SUMO-RL-MobiCharger/blob/main/accessories/demo.gif?raw=true" width="400"/>
+
 The main class is [SumoEnv](https://github.com/liyan2015/SUMO-RL-MobiCharger/blob/main/canalenv/envs/canalenv_gym.py). To train with RL Baselines3 Zoo, you need to register the environment as in their [doc](https://rl-baselines3-zoo.readthedocs.io/en/master/guide/custom_env.html) and add the following code to ```exp_manager.py```:
 
 ```
@@ -55,7 +57,7 @@ The main class is [SumoEnv](https://github.com/liyan2015/SUMO-RL-MobiCharger/blo
                     }, rank=i*2) for i in range(n_envs)])
 ```
 
-For training use the following command line:
+For training, use the following command line:
   
 ```
 python train.py --algo ppo --env SumoEnv-v0 --num-threads 1 --progress --conf-file hyperparams/python/sumoenv_config.py --save-freq 500000 --log-folder /usr/data2/canaltrain_log/ --tensorboard-log /usr/data2/canaltrain_tensorboard/ --verbose 2 --eval-freq 2000000 --eval-episodes 10 --n-eval-envs 10 --vec-env subproc
