@@ -15,46 +15,46 @@ The main class is [SumoEnv](https://github.com/liyan2015/SUMO-RL-MobiCharger/blo
 
 ```
 # On most env, SubprocVecEnv does not help and is quite memory hungry
-        # therefore we use DummyVecEnv by default
-        if "SumoEnv" not in self.env_name.gym_id:
-            env = make_vec_env(
-                make_env,
-                n_envs=n_envs,
-                seed=self.seed,
-                env_kwargs=self.env_kwargs,
-                monitor_dir=log_dir,
-                wrapper_class=self.env_wrapper,
-                vec_env_cls=self.vec_env_class,
-                vec_env_kwargs=self.vec_env_kwargs,
-                monitor_kwargs=self.monitor_kwargs,
-            )
-        else:
-            def make_env(
-                env_config={
-                    'gui_f':False, 
-                    'label':'evaluate'
-                }, rank: int = 0, seed: int = 0
-                ):
-                def _init():
-                    env = gym.make('SumoEnv-v0', **env_config)
-                    env = Monitor(env, log_dir)
-                    env.seed(seed + rank)
-                    env.action_space.seed(seed + rank)
-                    return env
-                set_random_seed(seed)
-                return _init
+# therefore we use DummyVecEnv by default
+if "SumoEnv" not in self.env_name.gym_id:
+    env = make_vec_env(
+        make_env,
+        n_envs=n_envs,
+        seed=self.seed,
+        env_kwargs=self.env_kwargs,
+        monitor_dir=log_dir,
+        wrapper_class=self.env_wrapper,
+        vec_env_cls=self.vec_env_class,
+        vec_env_kwargs=self.vec_env_kwargs,
+        monitor_kwargs=self.monitor_kwargs,
+    )
+else:
+    def make_env(
+        env_config={
+            'gui_f':False, 
+            'label':'evaluate'
+        }, rank: int = 0, seed: int = 0
+        ):
+        def _init():
+            env = gym.make('SumoEnv-v0', **env_config)
+            env = Monitor(env, log_dir)
+            env.seed(seed + rank)
+            env.action_space.seed(seed + rank)
+            return env
+        set_random_seed(seed)
+        return _init
+    
+    if eval_env:
+        if self.verbose > 0:
+            print("Creating evaluate environment.")
             
-            if eval_env:
-                if self.verbose > 0:
-                    print("Creating evaluate environment.")
-                    
-                env = SubprocVecEnv([make_env() for i in range(n_envs)])
-            else:
-                env = SubprocVecEnv([make_env(
-                    {
-                        'gui_f':False, 
-                        'label':'train'+str(i+1)
-                    }, rank=i*2) for i in range(n_envs)])
+        env = SubprocVecEnv([make_env() for i in range(n_envs)])
+    else:
+        env = SubprocVecEnv([make_env(
+            {
+                'gui_f':False, 
+                'label':'train'+str(i+1)
+            }, rank=i*2) for i in range(n_envs)])
 ```
 
 For training, use the following command line:
