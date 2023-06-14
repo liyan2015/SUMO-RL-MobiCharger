@@ -1,0 +1,27 @@
+<configuration>
+            <input>
+                <net-file value="canal_3lane.net_uturn.xml"/>
+            </input>
+            
+            <time>
+                <begin value="0"/>
+                <end value="99999"/>
+            </time>
+            
+            <routing>
+                <routing-algorithm value="dijkstra"/>
+            </routing>
+            
+            <processing>
+                <max-depart-delay value="600"/>
+                <collision.action value="warn"/>
+                <time-to-teleport value="-1"/>
+            </processing>
+            
+            <report>
+                <no-step-log value="true"/>
+                <duration-log.disable value="true"/>
+                <duration-log.statistics value="false"/>
+                <xml-validation value="never"/>
+            </report>
+        </configuration>

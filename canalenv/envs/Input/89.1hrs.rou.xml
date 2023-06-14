@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.sf.net/xsd/routes_file.xsd">
+	<vType id="type0" maxSpeed="0.05889440113394755"/>
+	<vType id="type1" maxSpeed="0.04205639097744361"/>
+	<vType id="type2" maxSpeed="0.1701245480112495"/>
+	<vType id="type3" maxSpeed="0.31676585193057033"/>
+	<vType id="type4" maxSpeed="0.04099303774276292"/>
+	<vType id="type5" maxSpeed="1.0"/>
+	<vType id="type6" maxSpeed="1.2786275079965108"/>
+	<vType id="type7" maxSpeed="0.1979174083303667"/>
+	<vType id="type8" maxSpeed="0.9604603117071404"/>
+	<vType id="type9" maxSpeed="0.9145647321428573"/>
+	<vType id="type10" maxSpeed="1.401011746873816"/>
+	<vType id="type11" maxSpeed="0.46946570670708604"/>
+	<vType id="type12" maxSpeed="1.0"/>
+	<vType id="type13" maxSpeed="1.392628132118451"/>
+	<vType id="type14" maxSpeed="0.0931803035912625"/>
+	<vType id="type15" maxSpeed="1.0"/>
+	<vType id="type16" maxSpeed="1.4774953387197016"/>
+	<vType id="type17" maxSpeed="0.07244255003706448"/>
+	<vType id="type18" maxSpeed="1.2971091445427732"/>
+	<vType id="type19" maxSpeed="0.5615176470588235"/>
+	<vType id="type20" maxSpeed="0.14300347222222223"/>
+	<vType id="type21" maxSpeed="1.0037118706357957"/>
+	<vType id="type22" maxSpeed="0.903472987872106"/>
+	<vType id="type23" maxSpeed="0.07400605831124574"/>
+	<vType id="type24" maxSpeed="0.86520338300443"/>
+	<vType id="type25" maxSpeed="0.06591954022988507"/>
+	<vType id="type26" maxSpeed="0.3026305139619587"/>
+	<vType id="type27" maxSpeed="0.06637731481481482"/>
+	<vType id="type28" maxSpeed="0.15308632826972954"/>
+	<vType id="type29" maxSpeed="0.05455769230769231"/>
+	<vType id="type30" maxSpeed="0.2674244120940649"/>
+	<vType id="type31" maxSpeed="0.036909312728751524"/>
+	<vType id="type32" maxSpeed="0.31821928771508606"/>
+	<vType id="type33" maxSpeed="0.16197709923664122"/>
+	<vType id="type34" maxSpeed="1.6014100185528757"/>
+	<vType id="type35" maxSpeed="0.2732072558857584"/>
+	<vType id="type36" maxSpeed="0.020647803425167536"/>
+	<vType id="type37" maxSpeed="0.2966169339798583"/>
+	<vType id="type38" maxSpeed="0.15086080586080586"/>
+	<vType id="type39" maxSpeed="0.2828993240839559"/>
+	<vType id="type40" maxSpeed="0.09789187086736678"/>
+	<vType id="type41" maxSpeed="0.06854581673306773"/>
+	<vType id="type42" maxSpeed="0.33633042096902305"/>
+	<vType id="type43" maxSpeed="0.34840298507462686"/>
+	<vType id="type44" maxSpeed="0.1315104784499802"/>
+	<vType id="type45" maxSpeed="0.13448515939904726"/>
+	<vType id="type46" maxSpeed="0.10043083003952569"/>
+	<vType id="type47" maxSpeed="0.1497571583907213"/>
+	<vType id="type48" maxSpeed="0.19805842536515855"/>
+	<vType id="type49" maxSpeed="0.07079984836997726"/>
+	<vType id="type50" maxSpeed="0.1914819993009437"/>
+	<vType id="type51" maxSpeed="0.28300000000000003"/>
+	<vType id="type52" maxSpeed="0.27768604651162787"/>
+	<vType id="type53" maxSpeed="0.19296583303980272"/>
+	<vType id="type54" maxSpeed="0.12440899202320523"/>
+	<vType id="type55" maxSpeed="0.13182322631787555"/>
+	<vType id="type56" maxSpeed="0.090166784953868"/>
+	<vType id="type57" maxSpeed="0.27785814116002794"/>
+	<vType id="type58" maxSpeed="0.12290836653386454"/>
+	<vType id="type59" maxSpeed="0.12936713412441567"/>
+	<vType id="type60" maxSpeed="3.059915966386555"/>
+	<vType id="type61" maxSpeed="0.8362397820163486"/>
+	<vType id="type62" maxSpeed="0.12747796090456112"/>
+	<vType id="type63" maxSpeed="0.5166084886949622"/>
+	<vType id="type64" maxSpeed="0.5097436810252759"/>
+	<vType id="type65" maxSpeed="0.1339789144865287"/>
+	<vType id="type66" maxSpeed="0.1751823118696664"/>
+	<vType id="type67" maxSpeed="0.19102504638218926"/>
+	<vType id="type68" maxSpeed="1.6177694610778441"/>
+	<vType id="type69" maxSpeed="0.07402695204122077"/>
+	<vType id="type70" maxSpeed="0.13449189402926057"/>
+	<vType id="type71" maxSpeed="0.31762866191607286"/>
+	<vType id="type72" maxSpeed="7.904020926756353"/>
+	<vType id="type73" maxSpeed="0.153505001852538"/>
+	<vType id="type74" maxSpeed="0.8836666666666666"/>
+	<vType id="type75" maxSpeed="0.06900766438079871"/>
+	<vType id="type76" maxSpeed="0.06541825095057034"/>
+	<vType id="type77" maxSpeed="0.18595978062157223"/>
+	<vType id="type78" maxSpeed="0.13752126366950182"/>
+	<vType id="type79" maxSpeed="0.07391573250869733"/>
+	<vType id="type80" maxSpeed="0.04880338591766064"/>
+	<vType id="type81" maxSpeed="1.0"/>
+	<vType id="type82" maxSpeed="0.6070816044260028"/>
+	<vType id="type83" maxSpeed="0.06348708487084871"/>
+	<vType id="type84" maxSpeed="0.15244478884153428"/>
+	<vType id="type85" maxSpeed="0.5486091954022988"/>
+	<vType id="type86" maxSpeed="0.13269951422623177"/>
+	<vType id="type87" maxSpeed="0.07783751493428913"/>
+	<vType id="type88" maxSpeed="0.0216640625"/>
+	<vType id="type89" maxSpeed="0.7227039151712888"/>
+	<vType id="type90" maxSpeed="0.14308382066276804"/>
+	<vType id="type91" maxSpeed="0.12934191702432046"/>
+	<vType id="type92" maxSpeed="0.07732308936514355"/>
+	<vType id="type93" maxSpeed="0.16809845176657404"/>
+	<vType id="type94" maxSpeed="0.1329810606060606"/>
+	<vType id="type95" maxSpeed="0.2531103448275862"/>
+	<vType id="type96" maxSpeed="0.0686745157614888"/>
+	<vType id="type97" maxSpeed="0.6087656033287101"/>
+	<vType id="type98" maxSpeed="0.5432346241457859"/>
+	<vType id="type99" maxSpeed="1.238343815513627"/>
+	<vType id="type100" maxSpeed="0.9849685534591195"/>
+	<vType id="type101" maxSpeed="0.5852266666666667"/>
+	<vType id="type102" maxSpeed="0.29450381679389315"/>
+	<vType id="type103" maxSpeed="0.23961422087745837"/>
+	<vType id="type104" maxSpeed="0.1355134281200632"/>
+	<vType id="type105" maxSpeed="0.07000723589001447"/>
+	<vType id="type106" maxSpeed="0.8642310418143161"/>
+	<vType id="type107" maxSpeed="0.6188560311284047"/>
+	<vType id="type108" maxSpeed="0.08379775280898877"/>
+	<vType id="type109" maxSpeed="0.1314584980237154"/>
+	<vType id="type110" maxSpeed="0.28731622746185853"/>
+	<vType id="type111" maxSpeed="0.27433647570703407"/>
+	<vType id="type112" maxSpeed="0.13327993592310775"/>
+	<vType id="type113" maxSpeed="0.10185425101214575"/>
+	<vType id="type114" maxSpeed="0.437411487018096"/>
+	<vType id="type115" maxSpeed="0.144656"/>
+	<vType id="type116" maxSpeed="0.2930364058869094"/>
+	<vType id="type117" maxSpeed="2.0861703821656046"/>
+	<vType id="type118" maxSpeed="0.5874312647289867"/>
+	<vType id="type119" maxSpeed="0.24153231663035582"/>
+	<vType id="type120" maxSpeed="0.29844202898550726"/>
+	<vType id="type121" maxSpeed="0.17964311206281228"/>
+	<vType id="type122" maxSpeed="0.5222189781021899"/>
+	<vType id="type123" maxSpeed="0.5860206337509212"/>
+	<vType id="type124" maxSpeed="0.16007371007371007"/>
+	<vType id="type125" maxSpeed="0.557179104477612"/>
+	<vType id="type126" maxSpeed="1.0596989422294547"/>
+	<vType id="type127" maxSpeed="0.27216546762589927"/>
+	<vType id="type128" maxSpeed="0.6019909159727479"/>
+	<vType id="type129" maxSpeed="1.0083591549295774"/>
+	<vType id="type130" maxSpeed="0.07996426018584704"/>
+	<vType id="type131" maxSpeed="0.3858084663428175"/>
+	<vType id="type132" maxSpeed="0.6955942947702061"/>
+	<vType id="type133" maxSpeed="0.07553679945982444"/>
+	<vType id="type134" maxSpeed="0.18250199840127898"/>
+	<vType id="type135" maxSpeed="0.6212734375"/>
+	<vType id="type136" maxSpeed="0.29078401229823214"/>
+	<vType id="type137" maxSpeed="0.25899313501144167"/>
+	<vType id="type138" maxSpeed="0.14322307692307693"/>
+	<vType id="type139" maxSpeed="9.70250493096647"/>
+	<vType id="type140" maxSpeed="2.7660050761421324"/>
+	<vType id="type141" maxSpeed="0.6512940212940214"/>
+	<vType id="type142" maxSpeed="0.5333275862068966"/>
+	<vType id="type143" maxSpeed="8.52828125"/>
+	<vType id="type144" maxSpeed="1.0"/>
+	<vType id="type145" maxSpeed="0.1952521334367727"/>
+	<vType id="type146" maxSpeed="1.0"/>
+	<vType id="type147" maxSpeed="1.0"/>
+	<vType id="type148" maxSpeed="1.0"/>
+	<vType id="type149" maxSpeed="7.67012474012474"/>
+	<vType id="type150" maxSpeed="1.0"/>
+	<vType id="type151" maxSpeed="9.536640419947506"/>
+	<vType id="type152" maxSpeed="9.006489151873767"/>
+	<vType id="type153" maxSpeed="1.881726907630522"/>
+	<vType id="type154" maxSpeed="6.106511627906977"/>
+	<vType id="type155" maxSpeed="4.483467741935484"/>
+	<vType id="type156" maxSpeed="1.0"/>
+	<vehicle id="244700935" type="type0" depart="0" departLane="free" departSpeed="max" departPos="last">
+		<route id="244700935" edges="-29980149"/>
+	</vehicle>
+	<vehicle id="244780636" type="type1" depart="11" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780636" edges="-195582877#2"/>
+	</vehicle>
+	<vehicle id="244010684" type="type2" depart="11" departLane="free" departSpeed="max" departPos="last">
+		<route id="244010684" edges="-360632516"/>
+	</vehicle>
+	<vehicle id="244830009" type="type3" depart="14" departLane="free" departSpeed="max" departPos="last">
+		<route id="244830009" edges="-92323947#1"/>
+	</vehicle>
+	<vehicle id="244780649" type="type4" depart="21" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780649" edges="-195582877#2"/>
+	</vehicle>
+	<vehicle id="244615628" type="type5" depart="24" departLane="free" departSpeed="max" departPos="last">
+		<route id="244615628" edges="27459189"/>
+	</vehicle>
+	<vehicle id="244750685" type="type6" depart="25" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750685" edges="360632524#4 -360632524#4 360632524#4 -360632524#4 360632524#4 -360632524#4 360632524#4 -360632524#4"/>
+	</vehicle>
+	<vehicle id="256306000" type="type7" depart="30" departLane="free" departSpeed="max" departPos="last">
+		<route id="256306000" edges="360632524#4"/>
+	</vehicle>
+	<vehicle id="244780368" type="type8" depart="33" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780368" edges="92323947#1 -92323947#1 92323947#1"/>
+	</vehicle>
+	<vehicle id="244110860" type="type9" depart="36" departLane="free" departSpeed="max" departPos="last">
+		<route id="244110860" edges="-29473090 29473090"/>
+	</vehicle>
+	<vehicle id="244110865" type="type10" depart="46" departLane="free" departSpeed="max" departPos="last">
+		<route id="244110865" edges="-29473090 29473090 -29473090"/>
+	</vehicle>
+	<vehicle id="244110861" type="type11" depart="53" departLane="free" departSpeed="max" departPos="last">
+		<route id="244110861" edges="-29473090"/>
+	</vehicle>
+	<vehicle id="244780326" type="type12" depart="54" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780326" edges="-25429798"/>
+	</vehicle>
+	<vehicle id="244750286" type="type13" depart="58" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750286" edges="360632524#3 -360632524#3 360632524#3 -360632516 360632516 -360632524#3 360632524#3 -360632516 360632516 -360632524#3 360632524#3 -360632516 360632516 -360632524#3 360632524#3 -360632516 360632516 -360632524#3 360632524#3"/>
+	</vehicle>
+	<vehicle id="244780142" type="type14" depart="59" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780142" edges="-360632526"/>
+	</vehicle>
+	<vehicle id="273386570" type="type15" depart="63" departLane="free" departSpeed="max" departPos="last">
+		<route id="273386570" edges="-360632524#6"/>
+	</vehicle>
+	<vehicle id="244300678" type="type16" depart="67" departLane="free" departSpeed="max" departPos="last">
+		<route id="244300678" edges="-360632524#3 360632524#3 -360632516 360632516 -360632524#3 360632524#3 -360632516 360632516 -360632524#3 360632524#3 -360632516 360632516 -360632524#3 360632524#3 -360632516 360632516 -360632524#3 360632524#3"/>
+	</vehicle>
+	<vehicle id="244750243" type="type17" depart="93" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750243" edges="gneE50"/>
+	</vehicle>
+	<vehicle id="244750689" type="type18" depart="111" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750689" edges="-360632524#4 360632524#4 -360632524#4 360632524#4 -360632524#4 360632524#4 -360632524#4 360632524#4"/>
+	</vehicle>
+	<vehicle id="244810807" type="type19" depart="120" departLane="free" departSpeed="max" departPos="last">
+		<route id="244810807" edges="22103866#1 -22103866#1"/>
+	</vehicle>
+	<vehicle id="244270394" type="type20" depart="128" departLane="free" departSpeed="max" departPos="last">
+		<route id="244270394" edges="68237456"/>
+	</vehicle>
+	<vehicle id="244770276" type="type21" depart="128" departLane="free" departSpeed="max" departPos="last">
+		<route id="244770276" edges="gneE43 360632518#1 -360632518#1 gneE44 gneE43 gneE44 -69007555#1 69007555#1 -69007555#1 -92323947#1"/>
+	</vehicle>
+	<vehicle id="244110864" type="type22" depart="163" departLane="free" departSpeed="max" departPos="last">
+		<route id="244110864" edges="29473090 -29473090"/>
+	</vehicle>
+	<vehicle id="244750265" type="type23" depart="195" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750265" edges="gneE50"/>
+	</vehicle>
+	<vehicle id="244810801" type="type24" depart="197" departLane="free" departSpeed="max" departPos="last">
+		<route id="244810801" edges="-22103866#1 22103866#1 -22103866#1"/>
+	</vehicle>
+	<vehicle id="244730602" type="type25" depart="199" departLane="free" departSpeed="max" departPos="last">
+		<route id="244730602" edges="58985549"/>
+	</vehicle>
+	<vehicle id="244020560" type="type26" depart="199" departLane="free" departSpeed="max" departPos="last">
+		<route id="244020560" edges="195582885#0"/>
+	</vehicle>
+	<vehicle id="244750258" type="type27" depart="202" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750258" edges="58985549"/>
+	</vehicle>
+	<vehicle id="244740654" type="type28" depart="207" departLane="free" departSpeed="max" departPos="last">
+		<route id="244740654" edges="-29474370#1"/>
+	</vehicle>
+	<vehicle id="226012930" type="type29" depart="239" departLane="free" departSpeed="max" departPos="last">
+		<route id="226012930" edges="-23294019#0"/>
+	</vehicle>
+	<vehicle id="244810800" type="type30" depart="249" departLane="free" departSpeed="max" departPos="last">
+		<route id="244810800" edges="-22103866#1"/>
+	</vehicle>
+	<vehicle id="244810915" type="type31" depart="262" departLane="free" departSpeed="max" departPos="last">
+		<route id="244810915" edges="-15498366"/>
+	</vehicle>
+	<vehicle id="244260494" type="type32" depart="262" departLane="free" departSpeed="max" departPos="last">
+		<route id="244260494" edges="-29472669"/>
+	</vehicle>
+	<vehicle id="244740540" type="type33" depart="280" departLane="free" departSpeed="max" departPos="last">
+		<route id="244740540" edges="360632516"/>
+	</vehicle>
+	<vehicle id="244750687" type="type34" depart="290" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750687" edges="360632516 -360632524#3 360632524#3 -360632516 360632516 -360632524#3 360632524#3 -360632516 360632516 -360632524#3 360632524#3 -360632516 360632516 -360632524#3 360632524#3 -360632516 360632516 -360632524#3 360632524#3"/>
+	</vehicle>
+	<vehicle id="244710831" type="type35" depart="298" departLane="free" departSpeed="max" departPos="last">
+		<route id="244710831" edges="-17162472#2"/>
+	</vehicle>
+	<vehicle id="244830663" type="type36" depart="299" departLane="free" departSpeed="max" departPos="last">
+		<route id="244830663" edges="-195582877#0"/>
+	</vehicle>
+	<vehicle id="244260496" type="type37" depart="305" departLane="free" departSpeed="max" departPos="last">
+		<route id="244260496" edges="-29472669"/>
+	</vehicle>
+	<vehicle id="244780711" type="type38" depart="309" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780711" edges="68237456"/>
+	</vehicle>
+	<vehicle id="244260497" type="type39" depart="331" departLane="free" departSpeed="max" departPos="last">
+		<route id="244260497" edges="-29472669"/>
+	</vehicle>
+	<vehicle id="244770115" type="type40" depart="350" departLane="free" departSpeed="max" departPos="last">
+		<route id="244770115" edges="-360632526"/>
+	</vehicle>
+	<vehicle id="244750256" type="type41" depart="351" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750256" edges="58985549"/>
+	</vehicle>
+	<vehicle id="227228010" type="type42" depart="355" departLane="free" departSpeed="max" departPos="last">
+		<route id="227228010" edges="-360632516"/>
+	</vehicle>
+	<vehicle id="244820409" type="type43" depart="357" departLane="free" departSpeed="max" departPos="last">
+		<route id="244820409" edges="29473628#1"/>
+	</vehicle>
+	<vehicle id="244850516" type="type44" depart="357" departLane="free" departSpeed="max" departPos="last">
+		<route id="244850516" edges="388339526"/>
+	</vehicle>
+	<vehicle id="244780651" type="type45" depart="360" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780651" edges="-29472670 29472670"/>
+	</vehicle>
+	<vehicle id="244110350" type="type46" depart="365" departLane="free" departSpeed="max" departPos="last">
+		<route id="244110350" edges="527004184#0"/>
+	</vehicle>
+	<vehicle id="244870757" type="type47" depart="377" departLane="free" departSpeed="max" departPos="last">
+		<route id="244870757" edges="-29474370#1"/>
+	</vehicle>
+	<vehicle id="256405000" type="type48" depart="377" departLane="free" departSpeed="max" departPos="last">
+		<route id="256405000" edges="360632524#4"/>
+	</vehicle>
+	<vehicle id="244870618" type="type49" depart="379" departLane="free" departSpeed="max" departPos="last">
+		<route id="244870618" edges="195582880#1"/>
+	</vehicle>
+	<vehicle id="244780634" type="type50" depart="408" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780634" edges="29472670 -29472670 29472670"/>
+	</vehicle>
+	<vehicle id="244260498" type="type51" depart="409" departLane="free" departSpeed="max" departPos="last">
+		<route id="244260498" edges="-29472669"/>
+	</vehicle>
+	<vehicle id="244810804" type="type52" depart="418" departLane="free" departSpeed="max" departPos="last">
+		<route id="244810804" edges="-22103866#1"/>
+	</vehicle>
+	<vehicle id="244780637" type="type53" depart="424" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780637" edges="29472670 -29472670 29472670"/>
+	</vehicle>
+	<vehicle id="244710267" type="type54" depart="459" departLane="free" departSpeed="max" departPos="last">
+		<route id="244710267" edges="58985549 -58985549"/>
+	</vehicle>
+	<vehicle id="244820994" type="type55" depart="495" departLane="free" departSpeed="max" departPos="last">
+		<route id="244820994" edges="388339526"/>
+	</vehicle>
+	<vehicle id="244110703" type="type56" depart="523" departLane="free" departSpeed="max" departPos="last">
+		<route id="244110703" edges="527004184#0"/>
+	</vehicle>
+	<vehicle id="244780654" type="type57" depart="536" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780654" edges="-29472669"/>
+	</vehicle>
+	<vehicle id="244830015" type="type58" depart="537" departLane="free" departSpeed="max" departPos="last">
+		<route id="244830015" edges="29473472#0"/>
+	</vehicle>
+	<vehicle id="244820044" type="type59" depart="539" departLane="free" departSpeed="max" departPos="last">
+		<route id="244820044" edges="-30010643#0"/>
+	</vehicle>
+	<vehicle id="244750688" type="type60" depart="546" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750688" edges="360632524#0 360632524#1 360632524#2 360632524#3 -360632524#3 -360632524#2 -360632524#1 -360632524#0 360632524#0 -360632526 360632526 360632524#1 360632524#2 360632524#3 -360632524#3 -360632524#2 -360632524#1 -360632524#0"/>
+	</vehicle>
+	<vehicle id="244100114" type="type61" depart="572" departLane="free" departSpeed="max" departPos="last">
+		<route id="244100114" edges="-22103866#1 22103866#1 -22103866#1"/>
+	</vehicle>
+	<vehicle id="244710543" type="type62" depart="592" departLane="free" departSpeed="max" departPos="last">
+		<route id="244710543" edges="388339526"/>
+	</vehicle>
+	<vehicle id="244870589" type="type63" depart="606" departLane="free" departSpeed="max" departPos="last">
+		<route id="244870589" edges="29997526"/>
+	</vehicle>
+	<vehicle id="244250731" type="type64" depart="626" departLane="free" departSpeed="max" departPos="last">
+		<route id="244250731" edges="22103866#1 -22103866#1"/>
+	</vehicle>
+	<vehicle id="244750262" type="type65" depart="653" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750262" edges="-58985549 58985549"/>
+	</vehicle>
+	<vehicle id="244660507" type="type66" depart="658" departLane="free" departSpeed="max" departPos="last">
+		<route id="244660507" edges="-15498075"/>
+	</vehicle>
+	<vehicle id="244780687" type="type67" depart="663" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780687" edges="68237456"/>
+	</vehicle>
+	<vehicle id="244750690" type="type68" depart="665" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750690" edges="360632524#3 -360632524#3 -360632524#2 -360632520 360632520 360632524#2 360632524#3 -360632524#3 -360632524#2 -360632524#1 -360632524#0 360632524#0 360632524#1 -360632520 360632520"/>
+	</vehicle>
+	<vehicle id="244130784" type="type69" depart="681" departLane="free" departSpeed="max" departPos="last">
+		<route id="244130784" edges="195582880#1"/>
+	</vehicle>
+	<vehicle id="244850891" type="type70" depart="688" departLane="free" departSpeed="max" departPos="last">
+		<route id="244850891" edges="29474883"/>
+	</vehicle>
+	<vehicle id="244650269" type="type71" depart="731" departLane="free" departSpeed="max" departPos="last">
+		<route id="244650269" edges="27687813#0"/>
+	</vehicle>
+	<vehicle id="244030043" type="type72" depart="732" departLane="free" departSpeed="max" departPos="last">
+		<route id="244030043" edges="360632524#0 360632524#1 360632524#2 360632524#3 360632524#4 360632524#5 -360632524#5 360632524#5 360632524#6"/>
+	</vehicle>
+	<vehicle id="244670683" type="type73" depart="749" departLane="free" departSpeed="max" departPos="last">
+		<route id="244670683" edges="29474370#1"/>
+	</vehicle>
+	<vehicle id="244780182" type="type74" depart="761" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780182" edges="22103866#1 -22103866#1 22103866#1"/>
+	</vehicle>
+	<vehicle id="244770080" type="type75" depart="762" departLane="free" departSpeed="max" departPos="last">
+		<route id="244770080" edges="-58985549"/>
+	</vehicle>
+	<vehicle id="244750240" type="type76" depart="768" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750240" edges="58985549"/>
+	</vehicle>
+	<vehicle id="244770759" type="type77" depart="791" departLane="free" departSpeed="max" departPos="last">
+		<route id="244770759" edges="68237456 -29407365#2"/>
+	</vehicle>
+	<vehicle id="244780372" type="type78" depart="791" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780372" edges="gneE48"/>
+	</vehicle>
+	<vehicle id="244710299" type="type79" depart="791" departLane="free" departSpeed="max" departPos="last">
+		<route id="244710299" edges="29472010#1"/>
+	</vehicle>
+	<vehicle id="244690887" type="type80" depart="792" departLane="free" departSpeed="max" departPos="last">
+		<route id="244690887" edges="29472010#0"/>
+	</vehicle>
+	<vehicle id="244750259" type="type81" depart="792" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750259" edges="58985549"/>
+	</vehicle>
+	<vehicle id="244780370" type="type82" depart="798" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780370" edges="92323947#1"/>
+	</vehicle>
+	<vehicle id="244750263" type="type83" depart="809" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750263" edges="58985549"/>
+	</vehicle>
+	<vehicle id="244780123" type="type84" depart="819" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780123" edges="-68237456"/>
+	</vehicle>
+	<vehicle id="244810803" type="type85" depart="820" departLane="free" departSpeed="max" departPos="last">
+		<route id="244810803" edges="-22103866#1 22103866#1"/>
+	</vehicle>
+	<vehicle id="244700476" type="type86" depart="821" departLane="free" departSpeed="max" departPos="last">
+		<route id="244700476" edges="29472010#1"/>
+	</vehicle>
+	<vehicle id="244750266" type="type87" depart="834" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750266" edges="gneE50"/>
+	</vehicle>
+	<vehicle id="244830882" type="type88" depart="840" departLane="free" departSpeed="max" departPos="last">
+		<route id="244830882" edges="-195582877#0"/>
+	</vehicle>
+	<vehicle id="244780710" type="type89" depart="842" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780710" edges="-92323947#1 92323947#1"/>
+	</vehicle>
+	<vehicle id="244780646" type="type90" depart="862" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780646" edges="-29472670 29472670"/>
+	</vehicle>
+	<vehicle id="244780635" type="type91" depart="873" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780635" edges="29472670"/>
+	</vehicle>
+	<vehicle id="244700944" type="type92" depart="898" departLane="free" departSpeed="max" departPos="last">
+		<route id="244700944" edges="29472010#1"/>
+	</vehicle>
+	<vehicle id="244740479" type="type93" depart="909" departLane="free" departSpeed="max" departPos="last">
+		<route id="244740479" edges="-360632516"/>
+	</vehicle>
+	<vehicle id="244780811" type="type94" depart="911" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780811" edges="27459189 -27459189 27459189"/>
+	</vehicle>
+	<vehicle id="244780640" type="type95" depart="932" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780640" edges="29472670 -29472670"/>
+	</vehicle>
+	<vehicle id="244780642" type="type96" depart="934" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780642" edges="29472670"/>
+	</vehicle>
+	<vehicle id="244780367" type="type97" depart="934" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780367" edges="92323947#1"/>
+	</vehicle>
+	<vehicle id="244810916" type="type98" depart="965" departLane="free" departSpeed="max" departPos="last">
+		<route id="244810916" edges="22103866#1"/>
+	</vehicle>
+	<vehicle id="244820333" type="type99" depart="969" departLane="free" departSpeed="max" departPos="last">
+		<route id="244820333" edges="-92323947#1 92323947#1"/>
+	</vehicle>
+	<vehicle id="244615809" type="type100" depart="971" departLane="free" departSpeed="max" departPos="last">
+		<route id="244615809" edges="360632524#0"/>
+	</vehicle>
+	<vehicle id="244070982" type="type101" depart="989" departLane="free" departSpeed="max" departPos="last">
+		<route id="244070982" edges="92323947#1"/>
+	</vehicle>
+	<vehicle id="244690765" type="type102" depart="997" departLane="free" departSpeed="max" departPos="last">
+		<route id="244690765" edges="360632516"/>
+	</vehicle>
+	<vehicle id="244130609" type="type103" depart="1002" departLane="free" departSpeed="max" departPos="last">
+		<route id="244130609" edges="29474091"/>
+	</vehicle>
+	<vehicle id="244850737" type="type104" depart="1017" departLane="free" departSpeed="max" departPos="last">
+		<route id="244850737" edges="-58985549 58985549"/>
+	</vehicle>
+	<vehicle id="244780686" type="type105" depart="1027" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780686" edges="-29407365#2"/>
+	</vehicle>
+	<vehicle id="244250733" type="type106" depart="1030" departLane="free" departSpeed="max" departPos="last">
+		<route id="244250733" edges="29473090"/>
+	</vehicle>
+	<vehicle id="244260499" type="type107" depart="1040" departLane="free" departSpeed="max" departPos="last">
+		<route id="244260499" edges="-29472669"/>
+	</vehicle>
+	<vehicle id="244780652" type="type108" depart="1055" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780652" edges="-195582877#2"/>
+	</vehicle>
+	<vehicle id="244710544" type="type109" depart="1061" departLane="free" departSpeed="max" departPos="last">
+		<route id="244710544" edges="388339526"/>
+	</vehicle>
+	<vehicle id="244730907" type="type110" depart="1061" departLane="free" departSpeed="max" departPos="last">
+		<route id="244730907" edges="29474370#1"/>
+	</vehicle>
+	<vehicle id="244780323" type="type111" depart="1071" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780323" edges="30010643#1"/>
+	</vehicle>
+	<vehicle id="244820278" type="type112" depart="1084" departLane="free" departSpeed="max" departPos="last">
+		<route id="244820278" edges="29473019#3"/>
+	</vehicle>
+	<vehicle id="211449050" type="type113" depart="1091" departLane="free" departSpeed="max" departPos="last">
+		<route id="211449050" edges="360632526"/>
+	</vehicle>
+	<vehicle id="211716770" type="type114" depart="1096" departLane="free" departSpeed="max" departPos="last">
+		<route id="211716770" edges="360632524#4"/>
+	</vehicle>
+	<vehicle id="244780647" type="type115" depart="1103" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780647" edges="29472670"/>
+	</vehicle>
+	<vehicle id="244780324" type="type116" depart="1110" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780324" edges="30010643#1"/>
+	</vehicle>
+	<vehicle id="244860579" type="type117" depart="1110" departLane="free" departSpeed="max" departPos="last">
+		<route id="244860579" edges="-29997526 29997526"/>
+	</vehicle>
+	<vehicle id="309168000" type="type118" depart="1120" departLane="free" departSpeed="max" departPos="last">
+		<route id="309168000" edges="195582885#0"/>
+	</vehicle>
+	<vehicle id="244710542" type="type119" depart="1147" departLane="free" departSpeed="max" departPos="last">
+		<route id="244710542" edges="388339526"/>
+	</vehicle>
+	<vehicle id="244690683" type="type120" depart="1148" departLane="free" departSpeed="max" departPos="last">
+		<route id="244690683" edges="68237456"/>
+	</vehicle>
+	<vehicle id="244850451" type="type121" depart="1148" departLane="free" departSpeed="max" departPos="last">
+		<route id="244850451" edges="-360632526"/>
+	</vehicle>
+	<vehicle id="244780184" type="type122" depart="1152" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780184" edges="22103866#1"/>
+	</vehicle>
+	<vehicle id="244780656" type="type123" depart="1173" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780656" edges="-29472669"/>
+	</vehicle>
+	<vehicle id="244820383" type="type124" depart="1179" departLane="free" departSpeed="max" departPos="last">
+		<route id="244820383" edges="gneE50"/>
+	</vehicle>
+	<vehicle id="227654770" type="type125" depart="1181" departLane="free" departSpeed="max" departPos="last">
+		<route id="227654770" edges="-195582885#0"/>
+	</vehicle>
+	<vehicle id="244860580" type="type126" depart="1196" departLane="free" departSpeed="max" departPos="last">
+		<route id="244860580" edges="29997526"/>
+	</vehicle>
+	<vehicle id="244780322" type="type127" depart="1200" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780322" edges="30010643#1"/>
+	</vehicle>
+	<vehicle id="244780655" type="type128" depart="1218" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780655" edges="-29472669"/>
+	</vehicle>
+	<vehicle id="244250734" type="type129" depart="1225" departLane="free" departSpeed="max" departPos="last">
+		<route id="244250734" edges="22103866#1 -22103866#1"/>
+	</vehicle>
+	<vehicle id="244780648" type="type130" depart="1225" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780648" edges="-195582877#2"/>
+	</vehicle>
+	<vehicle id="269057469" type="type131" depart="1225" departLane="free" departSpeed="max" departPos="last">
+		<route id="269057469" edges="360632524#4"/>
+	</vehicle>
+	<vehicle id="244820613" type="type132" depart="1227" departLane="free" departSpeed="max" departPos="last">
+		<route id="244820613" edges="92323947#1"/>
+	</vehicle>
+	<vehicle id="244780650" type="type133" depart="1243" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780650" edges="-195582877#2"/>
+	</vehicle>
+	<vehicle id="244670037" type="type134" depart="1280" departLane="free" departSpeed="max" departPos="last">
+		<route id="244670037" edges="23291087#2"/>
+	</vehicle>
+	<vehicle id="244780657" type="type135" depart="1301" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780657" edges="-29472669"/>
+	</vehicle>
+	<vehicle id="244780327" type="type136" depart="1303" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780327" edges="30010643#1"/>
+	</vehicle>
+	<vehicle id="244110863" type="type137" depart="1376" departLane="free" departSpeed="max" departPos="last">
+		<route id="244110863" edges="gneE48"/>
+	</vehicle>
+	<vehicle id="244780643" type="type138" depart="1411" departLane="free" departSpeed="max" departPos="last">
+		<route id="244780643" edges="-29472670"/>
+	</vehicle>
+	<vehicle id="211511460" type="type139" depart="1472" departLane="free" departSpeed="max" departPos="last">
+		<route id="211511460" edges="360632524#0 360632524#1 360632524#2 360632524#3 360632524#4 360632524#5 360632524#6"/>
+	</vehicle>
+	<vehicle id="244770103" type="type140" depart="1506" departLane="free" departSpeed="max" departPos="last">
+		<route id="244770103" edges="-29473472#0 29473472#0 29473472#1 -29473472#1 29473472#1 -30010643#1 -30010643#0 30010643#0 -30010643#0 -25429798 -12869939#3 -12869939#2 -12869939#1 479495084#2 -479495084#2 479495084#2"/>
+	</vehicle>
+	<vehicle id="244250601" type="type141" depart="1740" departLane="free" departSpeed="max" departPos="last">
+		<route id="244250601" edges="-29472669"/>
+	</vehicle>
+	<vehicle id="244060167" type="type142" depart="1819" departLane="free" departSpeed="max" departPos="last">
+		<route id="244060167" edges="-29473628#1"/>
+	</vehicle>
+	<vehicle id="244670307" type="type143" depart="1875" departLane="free" departSpeed="max" departPos="last">
+		<route id="244670307" edges="-360632524#6 -360632524#5 -360632524#4 -360632524#3 -360632524#2 -360632524#1 -360632524#0"/>
+	</vehicle>
+	<vehicle id="244650413" type="type144" depart="1961" departLane="free" departSpeed="max" departPos="last">
+		<route id="244650413" edges="-360632516"/>
+	</vehicle>
+	<vehicle id="244690688" type="type145" depart="2101" departLane="free" departSpeed="max" departPos="last">
+		<route id="244690688" edges="-360632526"/>
+	</vehicle>
+	<vehicle id="244870760" type="type146" depart="2487" departLane="free" departSpeed="max" departPos="last">
+		<route id="244870760" edges="-360632526"/>
+	</vehicle>
+	<vehicle id="244870122" type="type147" depart="2530" departLane="free" departSpeed="max" departPos="last">
+		<route id="244870122" edges="-360632526"/>
+	</vehicle>
+	<vehicle id="244750203" type="type148" depart="2631" departLane="free" departSpeed="max" departPos="last">
+		<route id="244750203" edges="-33914156"/>
+	</vehicle>
+	<vehicle id="244870486" type="type149" depart="2754" departLane="free" departSpeed="max" departPos="last">
+		<route id="244870486" edges="-360632526 360632526 360632524#1 -360632520 -360632518#1 58985549 -58985549 360632518#1 360632520 360632524#2 360632524#3 360632524#4 -29474860#1 -29474860#0 -29472010#1 -29474883 -29474838#3 -29474838#2 gneE50"/>
+	</vehicle>
+	<vehicle id="244870759" type="type150" depart="2803" departLane="free" departSpeed="max" departPos="last">
+		<route id="244870759" edges="-29474370#1"/>
+	</vehicle>
+	<vehicle id="246310000" type="type151" depart="2948" departLane="free" departSpeed="max" departPos="last">
+		<route id="246310000" edges="-360632524#6 -360632524#5 -360632524#4 -360632524#3 -360632522 360632522"/>
+	</vehicle>
+	<vehicle id="244740307" type="type152" depart="3001" departLane="free" departSpeed="max" departPos="last">
+		<route id="244740307" edges="360632524#0 360632524#1 -360632520 360632520 360632524#2 360632524#3 360632524#4 -360632524#4 360632524#4 360632524#5 195582885#0"/>
+	</vehicle>
+	<vehicle id="244615787" type="type153" depart="3319" departLane="free" departSpeed="max" departPos="last">
+		<route id="244615787" edges="-27759345 -114270761#1 -114270761#0"/>
+	</vehicle>
+	<vehicle id="32071628" type="type154" depart="3409" departLane="free" departSpeed="max" departPos="last">
+		<route id="32071628" edges="-360632526 360632526 360632524#1 360632524#2 360632524#3"/>
+	</vehicle>
+	<vehicle id="244810681" type="type155" depart="3425" departLane="free" departSpeed="max" departPos="last">
+		<route id="244810681" edges="360632524#4"/>
+	</vehicle>
+	<vehicle id="244670099" type="type156" depart="3450" departLane="free" departSpeed="max" departPos="last">
+		<route id="244670099" edges="30010652"/>
+	</vehicle>
+</routes>
