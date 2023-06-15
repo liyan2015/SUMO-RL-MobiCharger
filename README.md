@@ -2,7 +2,7 @@
 
 <!-- start intro -->
 
-SUMO-RL-MobiCharger provides an OpenAI-gym-like environment for the implementation of RL-based mobile charger dispatching methods on the [SUMO](https://github.com/eclipse/sumo) simulator. The fetures of this environment are three-fold:
+SUMO-RL-MobiCharger provides an OpenAI-gym-like environment for the implementation of RL-based mobile charger dispatching methods on the [SUMO](https://github.com/eclipse/sumo) simulator. The fetures of this environment are four-fold:
 
 - A simple and customizable interface to work with Reinforcement Learning for Dispatching of Mobile Chargers on city-scale transportation network with SUMO
 - Compatibility with OpenAI-gym and popular RL libraries such as [stable-baselines3](https://github.com/DLR-RM/stable-baselines3) and [RL Baselines3 Zoo](https://github.com/DLR-RM/rl-baselines3-zoo)
