@@ -22,13 +22,13 @@ SUMO-RL-MobiCharger provides an OpenAI-gym-like environment for the implementati
 ### Install SUMO >= 1.16.0:
 
 Install SUMO as in their [doc](https://sumo.dlr.de/docs/Installing/Linux_Build.html).
-Note that this code uses Libsumo as default for simulation speedup, but sumo-gui does not work with Libsumo on Windows ([more details](https://sumo.dlr.de/docs/Libsumo.html#python)). If you need to go back to TraCI, uncomment ```import traci``` and modify the code in ```reset()``` of [SumoEnv](canalenv/envs/canalenv_gym.py).
+Note that this environment uses Libsumo as default for simulation speedup, but sumo-gui does not work with Libsumo on Windows ([more details](https://sumo.dlr.de/docs/Libsumo.html#python)). If you need to go back to TraCI, uncomment ```import traci``` and modify the code in ```reset()``` of [SumoEnv](canalenv/envs/canalenv_gym.py).
 
 ### Install SUMO-RL-MobiCharger
 
 Clone the latest version and install it in gym
 ```bash
-git clone https://github.com/liyan2015/SUMO-RL-MobiCharger
+git clone https://github.com/liyan2015/SUMO-RL-MobiCharger.git
 cd SUMO-RL-MobiCharger
 pip install -e .
 ```
