@@ -13,12 +13,33 @@ SUMO-RL-MobiCharger provides an OpenAI-gym-like environment for the implementati
 |:--:| 
 | *Blue vehicles are mobile chargers, yellow vehicles are electric vehicles, green highlight means charging between mobile chargers and EVs, and blue highlight means charging between mobile chargers and charging stations* |
 
-<!--<p>
-    <img src="accessories/demo.gif" align="center" width="400"/>
-</p>
-<p>
-    <em>Blue vehicles are mobile chargers, yellow vehicles are electric vehicles, green highlight means charging between mobile chargers and EVs, and blue highlight means charging between mobile chargers and charging stations</em>
-</p>-->
+<!-- end intro -->
+
+## Install
+
+<!-- start install -->
+
+### Install SUMO >= 1.16.0:
+
+Install SUMO as in their [doc](https://sumo.dlr.de/docs/Installing/Linux_Build.html).
+Note that this code uses Libsumo as default for simulation speedup, but sumo-gui does not work with Libsumo on Windows ([more details](https://sumo.dlr.de/docs/Libsumo.html#python)). If you need to go back to TraCI, uncomment ```import traci``` and modify the code in ```reset()``` of [SumoEnv](canalenv/envs/canalenv_gym.py).
+
+### Install SUMO-RL-MobiCharger
+
+Clone the latest version and install it in gym
+```bash
+git clone https://github.com/liyan2015/SUMO-RL-MobiCharger
+cd SUMO-RL-MobiCharger
+pip install -e .
+```
+
+<!-- end install -->
+
+## Training & Testing
+
+<!-- start training -->
+
+### Register SUMO-RL-MobiCharger in RL Baselines3 Zoo
 
 The main class is [SumoEnv](canalenv/envs/canalenv_gym.py). To train with RL Baselines3 Zoo, you need to register the environment as in their [doc](https://rl-baselines3-zoo.readthedocs.io/en/master/guide/custom_env.html) and add the following code to ```exp_manager.py```:
 
@@ -66,33 +87,23 @@ else:
             }, rank=i*2) for i in range(n_envs)])
 ```
 
+### Training
+
 For training, use the following command line:
   
 ```bash
 python train.py --algo ppo --env SumoEnv-v0 --num-threads 1 --progress --conf-file hyperparams/python/sumoenv_config.py --save-freq 500000 --log-folder /usr/data2/canaltrain_log/ --tensorboard-log /usr/data2/canaltrain_tensorboard/ --verbose 2 --eval-freq 2000000 --eval-episodes 10 --n-eval-envs 10 --vec-env subproc
 ```
 
-<!-- end intro -->
+### Testing
 
-## Install
+Change the ```model_path``` and ```stats_path``` in ```canal_test.py``` and run:
 
-<!-- start install -->
-
-### Install SUMO >= 1.16.0:
-
-Install SUMO as in their [doc](https://sumo.dlr.de/docs/Installing/Linux_Build.html).
-Note that this code uses Libsumo as default for simulation speedup, but sumo-gui does not work with Libsumo on Windows ([more details](https://sumo.dlr.de/docs/Libsumo.html#python)). If you need to go back to TraCI, uncomment ```import traci``` and modify the code in ```reset()``` of [SumoEnv](canalenv/envs/canalenv_gym.py).
-
-### Install SUMO-RL-MobiCharger
-
-Clone the latest version and install it in gym
 ```bash
-git clone https://github.com/liyan2015/SUMO-RL-MobiCharger
-cd SUMO-RL-MobiCharger
-pip install -e .
+python canal_test.py
 ```
 
-<!-- end install -->
+<!-- end training -->
 
 ## MDP - Observations, Actions and Rewards
 
