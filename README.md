@@ -7,6 +7,7 @@ SUMO-RL-MobiCharger provides an OpenAI-gym-like environment for the implementati
 - A simple and customizable interface to work with Reinforcement Learning for Dispatching of Mobile Chargers on city-scale transportation network with SUMO
 - Compatibility with OpenAI-gym and popular RL libraries such as [stable-baselines3](https://github.com/DLR-RM/stable-baselines3) and [RL Baselines3 Zoo](https://github.com/DLR-RM/rl-baselines3-zoo)
 - Easy modification of state and reward functions for research focusing on vehicle routing or scheduling problems
+- Support parallel training of multiple environments via the use of ```SubprocVecEnv``` in [stable-baselines3](https://github.com/DLR-RM/stable-baselines3)
 
 | ![demo.gif](accessories/demo.gif) | 
 |:--:| 
@@ -72,6 +73,26 @@ python train.py --algo ppo --env SumoEnv-v0 --num-threads 1 --progress --conf-fi
 ```
 
 <!-- end intro -->
+
+## Install
+
+<!-- start install -->
+
+### Install SUMO >= 1.16.0:
+
+Install SUMO as in their [doc](https://sumo.dlr.de/docs/Installing/Linux_Build.html).
+Note that this code uses Libsumo as default for simulation speedup, but sumo-gui does not work with Libsumo on Windows ([more details](https://sumo.dlr.de/docs/Libsumo.html#python)). If you need to go back to TraCI, uncomment ```import traci``` and modify the code in ```reset()``` of [SumoEnv](canalenv/envs/canalenv_gym.py).
+
+### Install SUMO-RL-MobiCharger
+
+Clone the latest version and install it in gym
+```bash
+git clone https://github.com/liyan2015/SUMO-RL-MobiCharger
+cd SUMO-RL-MobiCharger
+pip install -e .
+```
+
+<!-- end install -->
 
 ## MDP - Observations, Actions and Rewards
 
