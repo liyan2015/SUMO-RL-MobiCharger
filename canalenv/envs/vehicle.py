@@ -325,9 +325,6 @@ class Vehicle:
         self.current_seg = action    
         self.dist_cost = 0
         
-        # choose a nearby vessel to stop and charge
-        self.neighbor_vehIDs = []
-        
         target_seg = self.canal_map[action]
         if self.current_edgeID != target_seg[1]:
             self.change_target(target_seg[1])
@@ -354,19 +351,6 @@ class Vehicle:
                 if self.last_charging_others != self.charging_others:
                     self.stay_time = 0
                 self.stay_time += 1
-                for vehicleID in traci.vehicle.getIDList():
-                    veh = veh_collection.get_vehicle(vehicleID)
-                    if (
-                        "charger" not in veh.name
-                        and target_seg[1] == veh.get_cur_edgeID() 
-                        # and veh.get_cur_pos() < target_seg[3]
-                        # and veh.get_cur_pos() >= target_seg[2]
-                        and veh.SOC < 1 - veh.SOC_THR
-                        and veh.total_charged_SOC < veh.SOC_THR
-                        and not veh.be_charged
-                        # and self.target_vehID == veh.name
-                        ):
-                        self.neighbor_vehIDs.append(vehicleID)
             else:
                 ## stays at a charger, SoC refilled
                 if (

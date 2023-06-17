@@ -264,10 +264,6 @@ def get_distance(
     canal_map: dict = None,
     o_seg: int = 0,
     d_seg: int = 0,
-    # o_edgeID: str = None, 
-    # d_edgeID: str = None, 
-    # o_pos: float = 0.0, 
-    # d_pos: float = 0.0, 
     isDriving: bool = True, 
     INF_DIST: float = 1e30, 
     MAX_DIST: float = 3e6
@@ -295,9 +291,7 @@ def get_distance(
 def get_route(
     edge_map: dict = None, 
     canal_map: dict = None,
-    # o_edgeID: str = None, 
     o_seg: int = 0, 
-    # d_edgeID: str = None, 
     d_seg: int = 0
 ):
     """ 

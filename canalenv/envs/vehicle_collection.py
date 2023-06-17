@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@file    vehicleCollection.py
+@file    vehicle_collection.py
 @author  Li Yan
 @date    2020-05-26
 @version 

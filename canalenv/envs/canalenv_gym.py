@@ -43,7 +43,7 @@ class SumoEnv(gym.Env):
         gui_f: bool = False, 
         env_id: str = 'SumoEnv-v0', 
         num_charger: int = 4,
-        date = '8_6'
+        date = '8_8' # '8_7' # '8_6' # 
     ):
         """ Initialize the environment. """
         super(SumoEnv, self).__init__()
@@ -161,6 +161,11 @@ class SumoEnv(gym.Env):
             self.veh_collection.get_vehicle(c).get_cur_seg()) for c in self.chargerIDs
         ]
         
+        for c in self.chargerIDs:
+            charger = self.veh_collection.get_vehicle(c)
+            charger.neighbor_vehIDs = []
+        
+        checked_vehIDs = []
         for vehicleID in veh_list:
             if "charger" not in vehicleID:
                 vessel = self.veh_collection.get_vehicle(vehicleID)
@@ -170,41 +175,39 @@ class SumoEnv(gym.Env):
                     and vessel.SOC <= 1 - vessel.SOC_THR
                    ):
                     SOC_state[cur_segID] += 1 / self.max_veh_num
+                    for charger_index, c in enumerate(self.chargerIDs):
+                        if (
+                            vehicleID not in checked_vehIDs
+                            and chr_cur_seg_pos[charger_index][2] == cur_segID 
+                            ):
+                            charger = self.veh_collection.get_vehicle(c)
+                            charger.neighbor_vehIDs.append(vehicleID)
+                            checked_vehIDs.append(vehicleID)
 
         for charger_index, c in enumerate(self.chargerIDs):
             charger = self.veh_collection.get_vehicle(c)
             chr_cur_seg = chr_cur_seg_pos[charger_index][2]
             charger_state[charger_index, 0] = chr_cur_seg / len(self.canal_map)
-            charger_state[charger_index, 1] = charger.stay_time / self.MAX_STEP # 0 #
+            charger_state[charger_index, 1] = charger.stay_time / self.MAX_STEP
             charger_state[charger_index, 2] = charger.charging_others
-            charger_state[charger_index, 3] = charger.charge_self # 0 # 
-            charger_state[charger_index, 4] = charger.SOC # 0 # 
-            o_edgeID = chr_cur_seg_pos[charger_index][0]
-            o_pos = chr_cur_seg_pos[charger_index][1]
-            o_seg = chr_cur_seg_pos[charger_index][2]
+            charger_state[charger_index, 3] = charger.charge_self
+            charger_state[charger_index, 4] = charger.SOC
             nearest_chg_stn = None
             max_remain_SOC = 0
             for chg_stn_index, chg_stn in enumerate(self.charger_canalIDs):
                 d_edgeID = self.canal_map[chg_stn][1]
                 d_pos = self.canal_map[chg_stn][2]
-                (_, _, route_num_steps) = get_route(self.edge_map, self.canal_map, o_seg, chg_stn)
+                (_, _, route_num_steps) = get_route(self.edge_map, self.canal_map, chr_cur_seg, chg_stn)
                 arrive_SOC = charger.SOC - route_num_steps * charger.consume_rate
                 if arrive_SOC > max_remain_SOC:
                     nearest_chg_stn = chg_stn
                     max_remain_SOC = arrive_SOC
                 charge_station_state[charger_index, chg_stn_index] = arrive_SOC / (charger.consume_rate * self.MAX_STEP)
             
-            if charger.target_charge_station == None:
-                if max_remain_SOC <= charger.consume_rate:
-                    charger.target_vehID = None
-                    charger.target_charge_station = nearest_chg_stn
-            
-            if charger.target_charge_station != None:
-                charger.target_prev_dist = get_distance(self.canal_map, o_seg, charger.target_charge_station)
-            elif charger.target_vehID != None:
+            if charger.target_vehID != None:
                 vessel = self.veh_collection.get_vehicle(charger.target_vehID)
                 cur_segID = vessel.get_cur_seg()
-                charger.target_prev_dist = get_distance(self.canal_map, o_seg, cur_segID)
+                charger.target_prev_dist = get_distance(self.canal_map, chr_cur_seg, cur_segID)
             else:
                 chr_target_vehIDs = [self.veh_collection.get_vehicle(c).target_vehID for c in self.chargerIDs]
                 charger.target_prev_dist = self.MAX_SPEED * self.SPEED_TIMES * self.MAX_STEP
@@ -225,7 +228,7 @@ class SumoEnv(gym.Env):
                                     if tmp_other_drive_dist < min_other_dist:
                                         min_other_dist = tmp_other_drive_dist
                                     
-                            tmp_drive_dist= get_distance(self.canal_map, o_seg, cur_segID)
+                            tmp_drive_dist= get_distance(self.canal_map, chr_cur_seg, cur_segID)
                             if tmp_drive_dist < charger.target_prev_dist and tmp_drive_dist < min_other_dist:
                                 charger.target_prev_dist = tmp_drive_dist
                                 charger.target_vehID = vehicleID
@@ -240,12 +243,9 @@ class SumoEnv(gym.Env):
             elig_act_state[charger_index, np.array(tmp_cand_indices)] = 1
             
             ## Determine the best action at current state
-            if charger.target_vehID != None or charger.target_charge_station != None:
-                if charger.target_charge_station != None:
-                    d_seg = charger.target_charge_station
-                elif charger.target_vehID != None:
-                    vessel = self.veh_collection.get_vehicle(charger.target_vehID)
-                    d_seg = vessel.get_cur_seg()
+            if charger.target_vehID != None 
+                vessel = self.veh_collection.get_vehicle(charger.target_vehID)
+                d_seg = vessel.get_cur_seg()
                     
                 min_dist = self.MAX_SPEED * self.SPEED_TIMES * self.MAX_STEP
                 min_index = 0
@@ -262,6 +262,9 @@ class SumoEnv(gym.Env):
                 ## When there are no vessels running out of SOC, the best action should be stay
                 min_index = 0
             dir_state[charger_index, min_index] = 1
+            
+            if chr_cur_seg in self.charger_canalIDs:
+                dir_state[charger_index, 0] = 1
         
         return np.concatenate([
             SOC_state, 
@@ -276,10 +279,10 @@ class SumoEnv(gym.Env):
         self.step_count += 1
         reward = 0.0
         
-        ## complex version canal is partitioned to multiple segments
+        ## current road segments of all chargers
         all_chr_cur_segs = [self.veh_collection.get_vehicle(c).get_cur_seg() for c in self.chargerIDs]
         
-        ## charger can take charge action only when there is nearby vessel
+        ## extract the eligible actions of each charger given its current road segment
         cand_segs = {}
         cand_indices = {}
         for c in range(self.num_charger):
@@ -398,12 +401,7 @@ class SumoEnv(gym.Env):
                     
                     ## + reward charger for SOC refill
                     if charger.charge_self == 1:
-                        tmp_reward += 2 * charger.step_charged_SOC + 0.2 * (1 - before_SOC)
-                        if charger.SOC == 1 and charger.target_charge_station != None:
-                            charger.target_charge_station = None
-                            
-                        if charger.target_charge_station != None:
-                            charger.target_vehID = None
+                        tmp_reward += 3 * charger.step_charged_SOC + 0.5 * (1 - before_SOC)
                             
                         if self.label == "test" and self.exe == 'sumo-gui':
                             traci.vehicle.highlight(charger.name, (0, 0, 255, 255), size=5, alphaMax=-1, duration=1)
@@ -452,7 +450,6 @@ class SumoEnv(gym.Env):
                 charger_index = self.chargerIDs.index(vessel.name)
                 chrg_stn_state_start = len(self.canal_map) + self.num_charger * 7 + 2 * self.num_charger * self.max_act_num + charger_index * len(self.charger_canalIDs)
                 chrg_stn_state_end = len(self.canal_map) + self.num_charger * 7 + 2 * self.num_charger * self.max_act_num + (charger_index + 1) * len(self.charger_canalIDs)
-                # if all(self._state[chrg_stn_state_start:chrg_stn_state_end] < 0):
                 if max(self._state[chrg_stn_state_start:chrg_stn_state_end]) < 0:
                     reward = -300
                     vessel.exhausted = True
@@ -467,7 +464,7 @@ class SumoEnv(gym.Env):
             or self.charge_complete
             ):
             if self.charge_complete:
-                reward = 150
+                reward = 250
                 if self.label == "test":
                     for vessel in self.veh_collection.get_values():
                         if "charger" not in vessel.name:
