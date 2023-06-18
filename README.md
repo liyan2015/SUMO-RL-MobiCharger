@@ -151,7 +151,7 @@ Thus, the possible actions of the agent at each road segment can be illustrated 
 <img src="accessories/possible_actions.jpg" align="center" width="75%"/>
 </p>
 
-Througout the road network, a mobile charger can only take maximally 6 actions: stay (0), charge vehicles (1), downstream road segments (2-4).
+Througout the road network, a mobile charger can only take maximally 6 actions: stay (0), charge vehicles (1), go downstream road segments (2-4).
 
 <!-- end action -->
 
@@ -176,7 +176,7 @@ The default reward function is defined as:
 
 <!-- start citation -->
 
-If you use this repository in your research, please cite:
+If you use this repository, please cite:
 ```bibtex
 @article{yan2022mobicharger,
   title={MobiCharger: Optimal Scheduling for Cooperative EV-to-EV Dynamic Wireless Charging},
