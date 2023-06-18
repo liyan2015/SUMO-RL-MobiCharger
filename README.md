@@ -24,6 +24,10 @@ SUMO-RL-MobiCharger provides an OpenAI-gym-like environment for the implementati
 Install SUMO as in their [doc](https://sumo.dlr.de/docs/Installing/Linux_Build.html).
 Note that this environment uses Libsumo as default for simulation speedup, but sumo-gui does not work with Libsumo on Windows ([more details](https://sumo.dlr.de/docs/Libsumo.html#python)). If you need to go back to TraCI, uncomment ```import traci``` and modify the code in ```reset()``` of [SumoEnv](canalenv/envs/canalenv_gym.py).
 
+### Install the Necessary Packages
+
+Install the necessary packages listed in [requirements.txt](https://github.com/liyan2015/SUMO-RL-MobiCharger/blob/main/requirements.txt)
+
 ### Install SUMO-RL-MobiCharger
 
 Clone the latest version and install it in gym
@@ -95,6 +99,14 @@ For training, use the following command line:
 python train.py --algo ppo --env SumoEnv-v0 --num-threads 1 --progress --conf-file hyperparams/python/sumoenv_config.py --save-freq 500000 --log-folder /usr/data2/canaltrain_log/ --tensorboard-log /usr/data2/canaltrain_tensorboard/ --verbose 2 --eval-freq 2000000 --eval-episodes 10 --n-eval-envs 10 --vec-env subproc
 ```
 
+### Resume Training
+
+For resume training with different EV route files,  use the following command line or check the [doc](https://rl-baselines3-zoo.readthedocs.io/en/master/guide/train.html#resume-training) of RL Baselines3 Zoo:
+
+```bash
+python train.py --algo ppo --env SumoEnv-v0 --num-threads 1 --progress --conf-file hyperparams/python/sumoenv_config.py --save-freq 500000 --log-folder /usr/data2/canaltrain_log/ --tensorboard-log /usr/data2/canaltrain_tensorboard/ --verbose 2 --eval-freq 2000000 --eval-episodes 10 --n-eval-envs 10 --vec-env subproc -i /usr/data2/canaltrain_log/ppo/SumoEnv-v0_16/rl_model_12999532_steps.zip
+```
+
 ### Testing
 
 Change the ```model_path``` and ```stats_path``` in ```canal_test.py``` and run:
@@ -105,7 +117,7 @@ python canal_test.py
 
 <!-- end training -->
 
-## MDP - Observations, Actions and Rewards
+## MDP - Observation, Action and Reward
 
 ### Observation
 
@@ -143,19 +155,19 @@ Througout the road network, a mobile charger can only take maximally 6 actions: 
 
 <!-- end action -->
 
-### Rewards
+### Reward
 
 <!-- start reward -->
 
 The default reward function is defined as:
     
 - ```+ 2``` if a mobile charger charges an EV with ```step_charged_SOC```
-- ```+ 2 * charger.step_charged_SOC + 0.2 * (1 - before_SOC)``` if a mobile charger charges itself with ```step_charged_SOC```
+- ```+ 3 * charger.step_charged_SOC + 0.5 * (1 - before_SOC)``` if a mobile charger charges itself with ```step_charged_SOC```
 - ```+ 8e-2``` if a mobile charger takes the best action
 - ```- 8e-2``` if a mobile charger takes an action different from the best one
 - ```- 8e-1``` if a mobile charger takes an ineligible action given its current road segment
 - ```- 300``` if a mobile charger exhausts its SOC
-- ```- 150``` if the agent succeeds in charging all the EVs and support the completion of their trips
+- ```+ 250``` if the agent succeeds in charging all the EVs and support the completion of their trips
 
 <!-- end reward -->
 
