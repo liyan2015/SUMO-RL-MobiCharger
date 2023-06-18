@@ -243,7 +243,7 @@ class SumoEnv(gym.Env):
             elig_act_state[charger_index, np.array(tmp_cand_indices)] = 1
             
             ## Determine the best action at current state
-            if charger.target_vehID != None 
+            if charger.target_vehID != None:
                 vessel = self.veh_collection.get_vehicle(charger.target_vehID)
                 d_seg = vessel.get_cur_seg()
                     
