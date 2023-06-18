@@ -43,7 +43,7 @@ class SumoEnv(gym.Env):
         gui_f: bool = False, 
         env_id: str = 'SumoEnv-v0', 
         num_charger: int = 4,
-        date = '8_8' # '8_7' # '8_6' # 
+        date = '8_9' # '8_8' # '8_7' # '8_6' # 
     ):
         """ Initialize the environment. """
         super(SumoEnv, self).__init__()
@@ -66,9 +66,6 @@ class SumoEnv(gym.Env):
             '8_7':'87.1hrs.rou.xml', # '87.24hrs.rou.xml', #
             '8_8':'88.1hrs.rou.xml', # '88.24hrs.rou.xml', #
             '8_9':'89.1hrs.rou.xml', # '89.24hrs.rou.xml', #
-            '8_10':'810.1hrs.rou.xml', # '810.24hrs.rou.xml', #
-            '8_11':'811.1hrs.rou.xml', # '811.24hrs.rou.xml', #
-            '8_12':'812.1hrs.rou.xml' # '812.24hrs.rou.xml', #
         }
         route_file = route_map[date]
         route_path = os.path.join(sumo_path, route_file)
