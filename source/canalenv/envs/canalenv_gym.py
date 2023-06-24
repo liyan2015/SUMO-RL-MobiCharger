@@ -18,8 +18,7 @@ else:
 # import traci
 import libsumo as traci
 import numpy as np
-# import gym
-import gymnasium as gym
+import gym
 from gym import spaces
 import canalenv
 from canalenv.envs.vehicle import Vehicle
@@ -40,7 +39,7 @@ class SumoEnv(gym.Env):
 
     def __init__(
         self, 
-        label: str, 
+        label: str = 'test',
         gui_f: bool = False, 
         env_id: str = 'SumoEnv-v0', 
         num_charger: int = 4,

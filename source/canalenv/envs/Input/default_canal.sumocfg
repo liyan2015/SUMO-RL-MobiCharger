@@ -1,0 +1,41 @@
+<configuration>
+        <input>
+            <net-file value="canal_3lane.net_uturn.xml"/>
+            <route-files value="89.1hrs.rou.xml,default_charger.rou.xml"/>
+            <additional-files value="chargingStations.xml"/>
+        </input>
+        
+        <time>
+            <begin value="0"/>
+            <end value="-1"/>
+            <step-length value="1"/>
+        </time>
+        
+        <routing>
+            <routing-algorithm value="astar"/>
+            <astar.all-distances value="canal3lane_uturn_dist_mat"/>
+        </routing>
+        
+        <processing>
+            <max-depart-delay value="1"/>
+            <eager-insert value="false"/>
+            <extrapolate-departpos value="false"/>
+            <collision.action value="none"/>
+            <time-to-teleport value="-1"/>
+            <lanechange.overtake-right value="true"/>
+            <ignore-route-errors value="false"/>
+            <device.rerouting.threads value="4"/>
+            <no-internal-links value="false"/>
+            <collision.check-junctions value="false"/>
+            <threads value="4"/>
+        </processing>
+        
+        <report>
+            <no-step-log value="true"/>
+            <duration-log.disable value="true"/>
+            <duration-log.statistics value="false"/>
+            <xml-validation value="never"/>
+            <no-warnings value="true"/>
+            <verbose value="false"/>
+        </report>
+    </configuration>
