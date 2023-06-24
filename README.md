@@ -33,7 +33,7 @@ Install the necessary packages listed in [requirements.txt](https://github.com/l
 Clone the latest version and install it in gym
 ```bash
 git clone https://github.com/liyan2015/SUMO-RL-MobiCharger.git
-cd SUMO-RL-MobiCharger
+cd SUMO-RL-MobiCharger/source
 pip install -e .
 ```
 
