@@ -18,8 +18,7 @@ else:
 # import traci
 import libsumo as traci
 import numpy as np
-# import gym
-import gymnasium as gym
+import gym
 from gym import spaces
 import canalenv
 from canalenv.envs.vehicle import Vehicle
