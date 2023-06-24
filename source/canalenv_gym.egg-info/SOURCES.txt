@@ -2,8 +2,8 @@ setup.py
 canalenv/__init__.py
 canalenv/envs/__init__.py
 canalenv/envs/canalenv_gym.py
-canalenv/envs/vehicle.py
 canalenv/envs/utils.py
+canalenv/envs/vehicle.py
 canalenv/envs/vehicle_collection.py
 canalenv_gym.egg-info/PKG-INFO
 canalenv_gym.egg-info/SOURCES.txt
