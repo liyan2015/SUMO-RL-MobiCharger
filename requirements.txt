@@ -10,3 +10,4 @@ tensorboard-plugin-wit>=1.8.1
 torch>=1.12.1+cu113
 torchaudio>=0.12.1+cu113
 torchvision>=0.13.1+cu113
+python>=3.9.16
