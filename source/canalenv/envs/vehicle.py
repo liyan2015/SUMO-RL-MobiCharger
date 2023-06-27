@@ -23,11 +23,11 @@ class Vehicle:
         canal_map: dict = None,
         depart_step: int = 0,
         orig_speed: float = 0,
-        MAX_STEP: int = 0
+        MAX_STEP: int = 0,
+        CHARGER_DRIVING_RANGE: float = 0
     ):
-        self.KM = 1000
         self.FULLCHARGE_TIME = 10 #120 # sec
-        self.CHARGER_DRIVING_RANGE = 0.5 * self.KM # 0.4 * self.KM # 0.3 * self.KM # 1 * self.KM # 
+        # self.CHARGER_DRIVING_RANGE = CHARGER_DRIVING_RANGE
         
         self.SOC_THR = 0.1
         self.name = name
@@ -42,7 +42,7 @@ class Vehicle:
             self.orig_speed = orig_speed
             self.current_edgeID = self.current_route[0]
             self.current_pos = 0
-            self.consume_rate = self.SOC / self.CHARGER_DRIVING_RANGE
+            self.consume_rate = self.SOC / CHARGER_DRIVING_RANGE
             self.target_prev_dist = MAX_STEP * orig_speed
             self.target_cur_dist = self.target_prev_dist
             self.target_vehID = None
@@ -354,8 +354,8 @@ class Vehicle:
             else:
                 ## stays at a charger, SoC refilled
                 if (
-                    self.current_seg in chg_canalIDs and
-                    self.SOC < 1 
+                    self.current_seg in chg_canalIDs 
+                    and self.SOC < 1
                     ):
                     self.charge_dist = self.total_distance
                     self.charge_self = 1

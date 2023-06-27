@@ -39,19 +39,21 @@ class SumoEnv(gym.Env):
 
     def __init__(
         self, 
-        label: str = 'test',
+        label: str, 
         gui_f: bool = False, 
         env_id: str = 'SumoEnv-v0', 
         num_charger: int = 4,
-        date = '8_9' # '8_8' # '8_7' # '8_6' # 
+        date = '8_9' # '8_7' # '8_8' # '8_6' # 
     ):
         """ Initialize the environment. """
         super(SumoEnv, self).__init__()
         self.MAX_STEP = 300000 # 250000 # 500000 # 400000 # 80000 # 30000 # 
         self.MAX_SPEED = 10
-        self.SPEED_TIMES = 15 # 20 # 10 # 50 # 30 # 1 # 
+        self.SPEED_TIMES = 15 # 10 # 5 # 1 # 20 # 50 # 30 # 
         self.INF_DIST = 1e30
         self.SAMPLE_INTERVAL = 3600 / 2
+        self.KM = 1000
+        self.CHARGER_DRIVING_RANGE = 0.5 * self.KM # 1 * self.KM # 0.4 * self.KM # 0.3 * self.KM # 
         
         self.label = label
         self.env_id = env_id      
@@ -260,7 +262,7 @@ class SumoEnv(gym.Env):
                 min_index = 0
             dir_state[charger_index, min_index] = 1
             
-            if chr_cur_seg in self.charger_canalIDs:
+            if chr_cur_seg in self.charger_canalIDs and charger.SOC < 1 :
                 dir_state[charger_index, 0] = 1
         
         return np.concatenate([
@@ -321,6 +323,7 @@ class SumoEnv(gym.Env):
                         self.canal_map, self.sim_step_count, 
                         self.veh_orig_speed[traci.vehicle.getTypeID(vehicleID)],
                         self.MAX_STEP,
+                        self.CHARGER_DRIVING_RANGE
                         )
                     )
                     if depart_delayed:
@@ -513,6 +516,7 @@ class SumoEnv(gym.Env):
                 self.canal_map, self.sim_step_count, 
                 self.veh_orig_speed[traci.vehicle.getTypeID(vehicleID)],
                 self.MAX_STEP,
+                self.CHARGER_DRIVING_RANGE
                 )
             )
             

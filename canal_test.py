@@ -24,15 +24,17 @@ if __name__ == "__main__":
     print("random action:", test_py_env.action_space.sample())
     test_py_env.close()
     test = False
-    moretest = True
+    moretest = False
     parallel = True
     deterministic = False
     moretestLen = 100
 
     if not test:
         """ demo in SUMO GUI """
-        modelPath = "/usr/data2/canaltrain_log/ppo/SumoEnv-v0_29/rl_model_15999424_steps.zip"
-        statsPath = "/usr/data2/canaltrain_log/ppo/SumoEnv-v0_29/rl_model_vecnormalize_15999424_steps.pkl"
+        os.chdir(os.path.dirname(__file__))
+        work_dir = os.getcwd()
+        modelPath = os.path.join(work_dir, "trained_agents/best_model.zip")
+        statsPath = os.path.join(work_dir, "trained_agents/best_model.pkl")
 
         ## load policy
         model = PPO.load(modelPath)
@@ -104,7 +106,7 @@ if __name__ == "__main__":
                     label="evaluate"
                     )])
                 evaluate_py_env = VecNormalize.load(statsPath, evaluate_py_env)
-                #  do not update them at test time
+                # do not update them at test time
                 evaluate_py_env.training = False
                 # reward normalization is not needed at test time
                 evaluate_py_env.norm_reward = False
