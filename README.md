@@ -43,6 +43,8 @@ pip install -e .
 
 <!-- start training -->
 
+In case the environment is not compatible with the up-to-date rl-baselines3-zoo, use [this old cloned copy](https://github.com/liyan2015/SUMO-RL-MobiCharger/files/12097859/rl-baselines3-zoo.zip) for tuning.
+
 ### Register SUMO-RL-MobiCharger in RL Baselines3 Zoo
 
 The main class is [SumoEnv](source/canalenv/envs/canalenv_gym.py). To train with RL Baselines3 Zoo, you need to register the environment as in their [doc](https://rl-baselines3-zoo.readthedocs.io/en/master/guide/custom_env.html) and add the following code to ```exp_manager.py```:
