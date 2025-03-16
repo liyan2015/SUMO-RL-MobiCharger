@@ -190,4 +190,6 @@ If you use this repository, please cite:
 }
 ```
 
+List of publications that cite this work: [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16279076996358881508)
+
 <!-- end citation -->
